@@ -32,7 +32,7 @@ Removes the element's gutter margin, regardless of its position in the grid hier
 
 #### Usage Notes
 
-When passed an `nth-child` argument of type `*n` with block display, the omega mixin automatically adds a clear to the `*n+1` th element.
+When passed an `nth-child` argument of type `*n` with block display, the omega mixin automatically adds a clear to the `*n+1` th element. Not that composite arguments such as `2n+1` do not support this feature.
 
 #### Deprecation Warning
 The omega mixin will no longer take a `$direction` argument. To change the layout direction, use `row($direction)` or set `$default-layout-direction` instead.
