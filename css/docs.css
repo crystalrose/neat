@@ -443,7 +443,8 @@ div.main-content {
   overflow: scroll; }
   @media screen and (min-width: 519px) {
     div.main-content {
-      width: calc(100% - 200px); } }
+      width: calc(100% - 200px);
+      padding: 0 2em; } }
 
 div.logo-container {
   padding-top: 40px; }

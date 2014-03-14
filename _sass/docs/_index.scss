@@ -5,6 +5,7 @@ div.main-content {
   overflow: scroll;
   @include media(min-width $desktop-layout) {
     width: calc(100% - #{$nav-width});
+    padding: 0 2em;
   }
 }
 
