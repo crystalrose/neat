@@ -385,8 +385,10 @@ table {
 
 html, body {
   background-color: #f9f8f6;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  overflow: hidden; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  @media screen and (max-width: 75em) {
+    html, body {
+      padding: 10px; } }
   html.docset, body.docset {
     width: 100%; }
 
@@ -437,13 +439,15 @@ div.wrapper {
   font-style: italic; }
 
 div.main-content {
-  float: left;
-  width: 100%;
-  height: 100vh;
-  overflow: scroll; }
-  @media screen and (min-width: 519px) {
-    div.main-content {
-      width: calc(100% - 200px); } }
+  *zoom: 1;
+  max-width: 75em;
+  margin-left: auto;
+  margin-right: auto; }
+  div.main-content:before, div.main-content:after {
+    content: " ";
+    display: table; }
+  div.main-content:after {
+    clear: both; }
 
 div.logo-container {
   padding-top: 40px; }
@@ -460,27 +464,17 @@ div.logo-container {
     text-indent: -9999px;
     width: 262px; }
 
-div.main-inner, div.docset-content {
-  *zoom: 1;
-  max-width: 75em;
-  margin-left: auto;
-  margin-right: auto; }
-  div.main-inner:before, div.docset-content:before, div.main-inner:after, div.docset-content:after {
-    content: " ";
-    display: table; }
-  div.main-inner:after, div.docset-content:after {
-    clear: both; }
-  div.main-inner h2.tagline, div.docset-content h2.tagline {
-    margin: 0; }
-  div.main-inner h1, div.docset-content h1 {
-    box-shadow: 1px 0 0 #f9f8f6, -1px 0 0 #f9f8f6;
-    color: #8b8880;
-    font-size: 30px;
-    font-weight: normal;
-    line-height: 100%;
-    margin: 00px 0 0;
-    padding: 25px 0px 15px;
-    text-shadow: 0 1px 0 white; }
+div.main-inner h2.tagline, div.docset-content h2.tagline {
+  margin: 0; }
+div.main-inner h1, div.docset-content h1 {
+  box-shadow: 1px 0 0 #f9f8f6, -1px 0 0 #f9f8f6;
+  color: #8b8880;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 100%;
+  margin: 00px 0 0;
+  padding: 25px 0px 15px;
+  text-shadow: 0 1px 0 white; }
 
 div.docset-content {
   float: left;
@@ -553,13 +547,11 @@ nav.main {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  right: auto;
+  position: fixed;
+  right: 20px;
   width: 200px;
   overflow-y: scroll;
-  max-height: 100%;
-  float: left;
-  height: 100vh;
-  position: relative; }
+  max-height: 100%; }
   @media screen and (max-width: 518px) {
     nav.main {
       display: none; } }
